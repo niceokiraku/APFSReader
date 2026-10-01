@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["core", "cli", "mount", "broker", "gui", "icon", "build-resources"]
+
+[workspace.package]
+version = "0.9.0"
+edition = "2021"
+license = "MIT"
+authors = ["niceokiraku"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+# Release builds need no debug symbols. Build-machine paths are removed with
+# --remap-path-prefix, set by scripts/release.ps1.
+strip = "symbols"

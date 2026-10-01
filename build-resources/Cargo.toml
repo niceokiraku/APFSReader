@@ -1,0 +1,10 @@
+[package]
+name = "apfsreader-build-resources"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Build-script helper: embeds the APFSReader icon and version info in an executable."
+
+[dependencies]
+apfsreader-icon = { path = "../icon" }
+winresource = "0.1"

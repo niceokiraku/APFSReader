@@ -1,0 +1,29 @@
+[package]
+name = "apfsreader-gui"
+version.workspace = true
+edition.workspace = true
+# Links apfsreader-mount (GPL-3.0, via winfsp-rs), so this is GPL-3.0 too.
+license = "GPL-3.0-only"
+
+[[bin]]
+name = "apfsreader-gui"
+path = "src/main.rs"
+
+[dependencies]
+apfsreader-core = { path = "../core" }
+apfsreader-mount = { path = "../mount" }
+apfsreader-icon = { path = "../icon" }
+eframe = { version = "0.36", default-features = false, features = ["default_fonts", "glow"] }
+tray-icon = "0.26"
+rfd = "0.17"
+windows = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_Globalization",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[build-dependencies]
+winfsp = { version = "0.13", default-features = false, features = ["delayload"] }
+apfsreader-build-resources = { path = "../build-resources" }

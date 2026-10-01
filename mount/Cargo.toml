@@ -1,0 +1,23 @@
+[package]
+name = "apfsreader-mount"
+version.workspace = true
+edition.workspace = true
+# winfsp-rs is GPL-3.0, so this front end is too. The core library stays MIT.
+license = "GPL-3.0-only"
+
+[lib]
+name = "apfsreader_mount"
+
+[[bin]]
+name = "apfsreader-mount"
+path = "src/main.rs"
+
+[dependencies]
+apfsreader-core = { path = "../core" }
+winfsp = { version = "0.13", default-features = false, features = ["delayload"] }
+winfsp-sys = "0.12"
+windows = { version = "0.61", features = ["Win32_System_LibraryLoader", "Win32_System_Console", "Win32_Foundation"] }
+
+[build-dependencies]
+winfsp = { version = "0.13", default-features = false, features = ["delayload"] }
+apfsreader-build-resources = { path = "../build-resources" }

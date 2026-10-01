@@ -1,0 +1,12 @@
+[package]
+name = "apfsreader-icon"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "The APFSReader icon, drawn in code, as RGBA pixels, PNG and ICO."
+
+[dependencies]
+png = "0.18"
+
+[dev-dependencies]
+png = "0.18"

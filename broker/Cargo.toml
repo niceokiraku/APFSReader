@@ -1,0 +1,12 @@
+[package]
+name = "apfsreader-broker"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Elevated, read-only disk helper for APFSReader: serves raw reads of one physical disk over a private named pipe."
+
+[dependencies]
+apfsreader-core = { path = "../core" }
+
+[build-dependencies]
+apfsreader-build-resources = { path = "../build-resources" }

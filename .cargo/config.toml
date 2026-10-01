@@ -1,0 +1,4 @@
+# bindgen (used by winfsp-sys) needs libclang. It is kept inside the project
+# (installed with: python -m pip install --target tools/libclang libclang).
+[env]
+LIBCLANG_PATH = { value = "tools/libclang/clang/native", relative = true }

@@ -1,0 +1,13 @@
+# Build output and local tooling
+/target
+/tools/
+/dist/
+
+# Test images: third-party or generated, some large, none redistributed here.
+# testdata/README.md says where each comes from.
+/testdata/*
+!/testdata/README.md
+
+# Disk images, wherever they are
+*.img
+*.dmg

@@ -1,0 +1,14 @@
+[package]
+name = "apfsreader"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+apfsreader-core = { path = "../core" }
+
+[dev-dependencies]
+sha2 = "0.10"
+
+[build-dependencies]
+apfsreader-build-resources = { path = "../build-resources" }
