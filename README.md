@@ -1,5 +1,29 @@
 ﻿# APFSReader
 
+**English** | [日本語 (README.ja.md)](README.ja.md)
+
+## 日本語の概要
+
+Mac の **HFS+ / APFS** ディスクを、Windows のエクスプローラーから**読み取り専用**で開くソフトです。
+ディスクイメージ(`.dmg` など)と、接続した Mac 用ディスクに対応し、ディスクには一切書き込みません。
+小さなデスクトップアプリで、ボリュームを普通のドライブとしてマウントします。最小化するとシステムトレイに収まります。
+
+- **ダウンロード**:[Releases](https://github.com/niceokiraku/APFSReader/releases) からインストーラー(`APFSReader-Setup-*.exe`)またはポータブル版 ZIP を入手します。
+- **動作環境**:Windows 10 / 11(64 ビット)と、無償のドライバー [WinFsp](https://winfsp.dev/)(未導入ならアプリが案内します)。
+- **使い方**:`apfsreader-gui.exe` を起動 → 「イメージを追加」(または `.dmg` をドロップ)→ 「マウント」。
+  接続したディスクは「物理ディスク」の見出しをクリックして開き、「ディスクを読み取る」を押します(管理者権限の承認が必要です)。
+  詳しくは [日本語の使い方ガイド](docs/USER_GUIDE.ja.md) をご覧ください。
+- **ご注意**:**ベータ版です。物理ディスクの読み取りは、まだ実機で検証していません。** 大切なデータは、必ずコピーを残してください。
+  暗号化された APFS(FileVault など)は開けません。配布物には署名がないため、初回に SmartScreen が警告することがあります。
+- **ライセンス**:ライブラリとコマンドラインツールは MIT、アプリとマウント部は GPL-3.0 です([LICENSE.md](LICENSE.md))。
+  このソフトは **WinFsp - Windows File System Proxy, Copyright (C) Bill Zissimopoulos**(https://github.com/winfsp/winfsp)を利用しています。
+
+技術的な詳細(構成、対応範囲、検証の範囲、ビルドとリリースの手順)の日本語版は、[README.ja.md](README.ja.md) にあります。
+
+---
+
+## English
+
 Read-only access to macOS volumes from Windows: **HFS+ / HFSX** and **APFS**
 (unencrypted), from disk images and physical disks. A small desktop app mounts
 them as ordinary drives in Explorer; minimising it keeps it in the system tray.
@@ -25,6 +49,13 @@ APFSReader uses WinFsp to show volumes as drives:
 
 > **WinFsp - Windows File System Proxy, Copyright (C) Bill Zissimopoulos**
 > https://github.com/winfsp/winfsp
+
+## Download
+
+Get the installer (`APFSReader-Setup-*.exe`, recommended) or the portable ZIP from
+[Releases](https://github.com/niceokiraku/APFSReader/releases). WinFsp (free) must be installed to
+run it; the app explains how if it is missing. The downloads are not code-signed, so Windows
+SmartScreen may warn on first run (More info → Run anyway).
 
 ## The app
 
