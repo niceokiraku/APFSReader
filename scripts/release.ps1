@@ -105,7 +105,9 @@ foreach ($d in "core", "cli", "mount", "broker", "gui", "icon", "build-resources
 foreach ($f in "Cargo.toml", "Cargo.lock", "README.md", "LICENSE.md", "LICENSE-MIT", "COPYING", "THIRD_PARTY_LICENSES.md", ".gitignore") {
     if (Test-Path "$root\$f") { Copy-Item "$root\$f" $srcInner }
 }
-# Test fixtures come from other projects and are not redistributed; scripts say how to get them.
+# Test fixtures come from other projects and are not redistributed; testdata\README.md says where to get them.
+New-Item -ItemType Directory -Force "$srcInner\testdata" | Out-Null
+Copy-Item "$root\testdata\README.md" "$srcInner\testdata"
 Compress-Archive -Path $srcInner -DestinationPath $srcZip
 [IO.Directory]::Delete($srcRoot, $true)
 
